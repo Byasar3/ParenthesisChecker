@@ -51,20 +51,20 @@ public class ParenthesesChecker {
 // .charAt returns the character at the specified index in a string,
 // as it's defined as (i), it will run through the length of the string ( i < testString.length() ) and increase one character each time (i++)
 
-            if (character == '(')
+            if (character == '(' || character =='{')
                 tester.push(character); // pushing any '(' onto stack
 
 
 
             if (tester.empty()) return false; // boolean says stack is NOT empty
 
-            else if (character == ')') {
+            else if (character == ')' || character == '}') {
                 if (tester.empty())
                     return false;
-                else if (tester.peek() == '(')
+                else if (tester.peek() == '(' && character == ')'|| tester.peek() == '{' && character == '}')
                     tester.pop();
                     else
-                        return true;
+                        return false;
 
 
 

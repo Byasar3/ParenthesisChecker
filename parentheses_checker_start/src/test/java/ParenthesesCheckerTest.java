@@ -104,35 +104,35 @@ public class ParenthesesCheckerTest {
 
     // EXTENSION TESTS
 
-    @Disabled
+
     @Test
     public void passesForBraces(){
         String testString = "test {braces}";
         assertTrue(checker.checkParentheses(testString));
     }
 
-    @Disabled
+
     @Test
     public void failsForSingleOpeningBrace(){
         String testString = "test {braces";
         assertFalse(checker.checkParentheses(testString));
     }
 
-    @Disabled
+
     @Test
     public void failsForSingleClosingBrace(){
         String testString = "test braces}";
         assertFalse(checker.checkParentheses(testString));
     }
 
-    @Disabled
+
     @Test
     public void passesForMultipleBraces(){
         String testString = "test {multiple} {braces}";
         assertTrue(checker.checkParentheses(testString));
     }
 
-    @Disabled
+
     @Test
     public void passesForNestedBraces(){
         String testString = "test { nested {braces}}";
